@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const ExploreNow = () => {
   return (
-    <div className="w-11/12 mx-auto flex max-md:flex-col justify-center items-center gap-20 mb-20">
-      <div className="md:w-1/2">
+    <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 mb-20">
+      <div className="md:w-1/2 w-full">
         <p className="text-left text-lg md:text-2xl text-black">
           Lorem ipsum dolor sit amet, consectetur adipiscing <br /> elit, sed do
           eiusmod tempor incididunt ut labore et
@@ -28,21 +28,21 @@ const ExploreNow = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 w-full">
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
           className="mySwiper"
-          style={{ width: 395, height: 395 }}
+          style={{ width: "100%", maxWidth: "395px", height: "395px" }}
         >
           <SwiperSlide className="rounded-md bg-[#1F3B68]">
-            <div className="px-10 py-5 flex flex-col justify-between h-full">
+            <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
-                <h1 className="text-white font-bold italic text-4xl">
+                <h1 className="text-white font-bold italic text-2xl md:text-4xl">
                   Lorem ipsum
                 </h1>
-                <div className="flex gap-[2px]">
+                <div className="flex gap-[2px] mt-2">
                   <Image
                     src="/Ellipse 12.png"
                     alt="Ellipse 12"
@@ -55,7 +55,9 @@ const ExploreNow = () => {
                 </div>
               </div>
               <div className="w-full rounded-lg space-y-1 text-white backdrop-blur-lg bg-white/30 shadow-lg p-3 bottom-0">
-                <h1 className="text-xl font-medium">Lawrance Stroll</h1>
+                <h1 className="text-lg md:text-xl font-medium">
+                  Lawrance Stroll
+                </h1>
                 <h1 className="text-sm font-medium">
                   Hegifueshho dhfsui foiehhsio
                 </h1>
@@ -63,12 +65,12 @@ const ExploreNow = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="rounded-md bg-[#980FA7]">
-            <div className="px-10 py-5 flex flex-col justify-between h-full">
+            <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
-                <h1 className="text-white font-bold italic text-4xl">
+                <h1 className="text-white font-bold italic text-2xl md:text-4xl">
                   Lorem ipsum
                 </h1>
-                <div className="flex gap-[2px]">
+                <div className="flex gap-[2px] mt-2">
                   <Image
                     src="/Ellipse 12.png"
                     alt="Ellipse 12"
@@ -81,7 +83,9 @@ const ExploreNow = () => {
                 </div>
               </div>
               <div className="w-full rounded-lg space-y-1 text-white backdrop-blur-lg bg-white/30 shadow-lg p-3 bottom-0">
-                <h1 className="text-xl font-medium">Lawrance Stroll</h1>
+                <h1 className="text-lg md:text-xl font-medium">
+                  Lawrance Stroll
+                </h1>
                 <h1 className="text-sm font-medium">
                   Hegifueshho dhfsui foiehhsio
                 </h1>
@@ -89,12 +93,12 @@ const ExploreNow = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="rounded-md bg-[#31096A]">
-            <div className="px-10 py-5 flex flex-col justify-between h-full">
+            <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
-                <h1 className="text-white font-bold italic text-4xl">
+                <h1 className="text-white font-bold italic text-2xl md:text-4xl">
                   Lorem ipsum
                 </h1>
-                <div className="flex gap-[2px]">
+                <div className="flex gap-[2px] mt-2">
                   <Image
                     src="/Ellipse 12.png"
                     alt="Ellipse 12"
@@ -107,7 +111,9 @@ const ExploreNow = () => {
                 </div>
               </div>
               <div className="w-full rounded-lg space-y-1 text-white backdrop-blur-lg bg-white/30 shadow-lg p-3 bottom-0">
-                <h1 className="text-xl font-medium">Lawrance Stroll</h1>
+                <h1 className="text-lg md:text-xl font-medium">
+                  Lawrance Stroll
+                </h1>
                 <h1 className="text-sm font-medium">
                   Hegifueshho dhfsui foiehhsio
                 </h1>

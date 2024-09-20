@@ -29,7 +29,14 @@ const Overview = () => {
       <div className="relative z-50">
         <div className="mb-52">
           <Swiper
-            slidesPerView={4}
+            slidesPerView={1} // Change to 1 for mobile
+            breakpoints={{
+              // Add breakpoints for different screen sizes
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
+            }}
             centeredSlides={true}
             spaceBetween={30}
             onSlideChange={handleSlideChange}
@@ -56,10 +63,10 @@ const Overview = () => {
             ].map((bgColor, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className="mx-10 transition-all duration-500"
+                  className="mx-5 sm:mx-10 transition-all duration-500"
                   style={{
-                    height: index === activeIndex ? "400px" : "304px",
-                    width: index === activeIndex ? "250px" : "234px",
+                    height: index === activeIndex ? "300px" : "250px", // Adjust heights for small screens
+                    width: index === activeIndex ? "200px" : "180px", // Adjust widths for small screens
                     backgroundColor: bgColor,
                   }}
                 ></div>
@@ -67,7 +74,7 @@ const Overview = () => {
             ))}
           </Swiper>
         </div>
-        <div className="absolute bottom-[-30px] right-20 flex z-50">
+        <div className="absolute bottom-[-30px] right-5 md:right-20 flex z-50">
           <button
             ref={prevRef}
             aria-label="Previous Slide"
@@ -95,62 +102,62 @@ const Overview = () => {
         </div>
       </div>
 
-      <div className="flex w-11/12 mx-auto max-md:flex-col mt-[370px] justify-center items-center md:gap-14 lg:gap-20 relative z-20">
-        <div className="w-1/2 flex flex-col justify-center items-center gap-5">
+      <div className="flex flex-col md:flex-row w-11/12 mx-auto mt-[370px] md:gap-14 lg:gap-20 justify-center items-center relative z-20">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-5">
           <div className="flex justify-center items-center gap-5">
             <div
-              className="rounded-3xl h-[408px] w-[408px]"
+              className="rounded-3xl h-[300px] md:h-[400px] w-[250px] md:w-[400px]"
               style={{ backgroundColor: largeDivColor }}
             ></div>
             <div className="flex flex-col justify-center items-center gap-5">
               <div
-                className="bg-[#0FA958] rounded-3xl h-[120px] w-[120px]"
+                className="bg-[#0FA958] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#0FA958")}
               ></div>
               <div
-                className="bg-[#BE92FB] rounded-3xl h-[120px] w-[120px]"
+                className="bg-[#BE92FB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#BE92FB")}
               ></div>
               <div
-                className="bg-[#FFACAC] rounded-3xl h-[120px] w-[120px]"
+                className="bg-[#FFACAC] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#FFACAC")}
               ></div>
             </div>
           </div>
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center gap-3">
             <div
-              className="bg-[#2E4E3E] rounded-3xl h-[120px] w-[120px]"
+              className="bg-[#2E4E3E] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#2E4E3E")}
             ></div>
             <div
-              className="bg-[#26DBDB] rounded-3xl h-[120px] w-[120px]"
+              className="bg-[#26DBDB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#26DBDB")}
             ></div>
             <div
-              className="bg-[#B126DB] rounded-3xl h-[120px] w-[120px]"
+              className="bg-[#B126DB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#B126DB")}
             ></div>
             <div
-              className="bg-[#DB4126] rounded-3xl h-[120px] w-[120px]"
+              className="bg-[#DB4126] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#DB4126")}
             ></div>
           </div>
         </div>
-        <div className="flex-1">
-          <h1 className="text-[40px] font-bold text-black text-center">
+        <div className="w-full md:flex-1 mt-10 md:mt-0">
+          <h1 className="text-[32px] md:text-[40px] font-bold text-black text-center md:text-left">
             Collection Featured
           </h1>
-          <p className="text-black text-2xl text-left">
+          <p className="text-lg md:text-2xl text-black text-left">
             Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do
             eiusmod tet ut labore et dolore magna aliqrit in vol uptate velit
             esse cillumsunt in culpa
           </p>
         </div>
       </div>
-      <div className="absolute top-56 w-full z-10">
-        <div className="bg-gradient-to-t from-[#6BE6A8] to-[#3C805D] pt-24 pb-40 px-20">
-          <h1 className="text-[40px] font-bold">Overview</h1>
-          <p className="text-xl text-black">
+      <div className="absolute top-48 w-full z-10">
+        <div className="bg-gradient-to-t from-[#6BE6A8] to-[#3C805D] pt-24 pb-40 px-5 md:px-20">
+          <h1 className="text-[32px] md:text-[40px] font-bold">Overview</h1>
+          <p className="text-base md:text-xl text-black">
             Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed
             do eiusmod tempor
             <br /> incididunt ut labore et dolore magna aliqua.
@@ -162,9 +169,9 @@ const Overview = () => {
         <div
           className="w-full bg-[#6BE6A8]"
           style={{
-            height: "300px",
-            borderBottomLeftRadius: "50% 100px",
-            borderBottomRightRadius: "50% 100px",
+            height: "200px",
+            borderBottomLeftRadius: "50% 80px",
+            borderBottomRightRadius: "50% 80px",
           }}
         ></div>
       </div>
