@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import DiscoverMore from "@/components/DiscoverMore";
 import ExploreNow from "@/components/ExploreNow";
 import Navbar from "@/components/Navbar";
 import Overview from "@/components/Overview";
@@ -12,6 +13,7 @@ const Home = () => {
       <SignUpSection />
       <ExploreNow />
       <Overview />
+      <DiscoverMore />
     </div>
   );
 };
