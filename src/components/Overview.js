@@ -1,13 +1,24 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Overview = () => {
   const [largeDivColor, setLargeDivColor] = useState("#0FA958");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex);
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
 
   const handleDivClick = (color) => {
     setLargeDivColor(color);
@@ -15,46 +26,76 @@ const Overview = () => {
 
   return (
     <div className="relative mb-20">
-      <div className="relative z-50 mb-20">
-        <div>
+      <div className="relative z-50">
+        <div className="mb-52">
           <Swiper
             slidesPerView={4}
-            spaceBetween={30}
             centeredSlides={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+            spaceBetween={30}
+            onSlideChange={handleSlideChange}
+            onInit={(swiper) => {
+              setActiveIndex(swiper.activeIndex);
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
             }}
             modules={[Navigation]}
             className="mySwiper"
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            {[
+              "#FF9A9A",
+              "#CFAAFF",
+              "#A0FCD9",
+              "#26DBDB",
+              "#B126DB",
+              "#2E4E3E",
+              "#DB4126",
+            ].map((bgColor, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="mx-10 transition-all duration-500"
+                  style={{
+                    height: index === activeIndex ? "400px" : "304px",
+                    width: index === activeIndex ? "250px" : "234px",
+                    backgroundColor: bgColor,
+                  }}
+                ></div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
-
-        {/* Navigation buttons with icons aligned bottom right */}
-        <div className="absolute bottom-0 right-0 flex mb-4 mr-4">
-          <button className="swiper-button-prev bg-gray-200 p-3 rounded flex items-center">
-            <FaArrowLeft size={20} />
+        <div className="absolute bottom-[-30px] right-20 flex z-50">
+          <button
+            ref={prevRef}
+            aria-label="Previous Slide"
+            className={`custom-prev flex items-center justify-center p-2 rounded-full ${
+              isBeginning
+                ? "bg-transparent text-transparent"
+                : "bg-black text-[#6BE6A8]"
+            }`}
+            disabled={isBeginning}
+          >
+            <IoIosArrowBack />
           </button>
-          <button className="swiper-button-next bg-gray-200 p-3 rounded flex items-center ml-2">
-            <FaArrowRight size={20} />
+          <button
+            ref={nextRef}
+            aria-label="Next Slide"
+            className={`custom-next flex items-center justify-center ml-4 p-2 rounded-full text-[#6BE6A8] ${
+              isEnd
+                ? "bg-transparent text-transparent"
+                : "bg-black text-[#6BE6A8]"
+            }`}
+            disabled={isEnd}
+          >
+            <IoIosArrowForward />
           </button>
         </div>
       </div>
 
-      <div className="flex w-11/12 mx-auto max-md:flex-col justify-center items-center md:gap-14 lg:gap-20 relative z-20">
+      <div className="flex w-11/12 mx-auto max-md:flex-col mt-[370px] justify-center items-center md:gap-14 lg:gap-20 relative z-20">
         <div className="w-1/2 flex flex-col justify-center items-center gap-5">
           <div className="flex justify-center items-center gap-5">
             <div
@@ -106,8 +147,8 @@ const Overview = () => {
           </p>
         </div>
       </div>
-      <div className="absolute top-0 w-full z-10">
-        <div className="bg-gradient-to-t from-[#6BE6A8] to-[#3C805D] pt-20 pb-40 px-10">
+      <div className="absolute top-56 w-full z-10">
+        <div className="bg-gradient-to-t from-[#6BE6A8] to-[#3C805D] pt-24 pb-40 px-20">
           <h1 className="text-[40px] font-bold">Overview</h1>
           <p className="text-xl text-black">
             Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed
