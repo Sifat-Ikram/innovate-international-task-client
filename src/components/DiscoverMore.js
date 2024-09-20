@@ -10,7 +10,7 @@ const DiscoverMore = () => {
     <div className="w-11/12 mx-auto space-y-8 mb-10">
       <h1 className=" text-2xl md:text-4xl font-black">DISCOVER MORE</h1>
       <div className="flex max-md:flex-col max-md:space-y-5 justify-between items-center">
-        <div className="flex justify-center items-center max-md:grid max-md:grid-cols-4 max-sm:grid-col-2 gap-1 md:gap-3">
+        <div className="flex justify-center items-center max-md:grid max-md:grid-cols-3 max-sm:grid-col-2 gap-1 md:gap-3">
           <button className="p-2 text-white bg-[#3F05D4] text-xs font-medium rounded-full">
             All Categories
           </button>
@@ -34,7 +34,7 @@ const DiscoverMore = () => {
           <IoFilterSharp /> All Filters
         </button>
       </div>
-      <div className="mt-10 max-md:gap-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-10 max-md:gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div className="h-[403px] w-[292px] rounded-2xl shadow-xl p-3 space-y-6">
           <div className="relative">
             <div className="h-[213px] w-[260px] rounded-2xl bg-gradient-to-br from-[#DED4F8] to-[#BE92FB]"></div>
@@ -236,7 +236,7 @@ const DiscoverMore = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div className="h-[403px] w-[292px] rounded-2xl shadow-xl p-3 space-y-6">
           <div className="relative">
             <div className="h-[213px] w-[260px] rounded-2xl bg-gradient-to-br from-[#DED4F8] to-[#BE92FB]"></div>

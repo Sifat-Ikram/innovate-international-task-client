@@ -29,9 +29,8 @@ const Overview = () => {
       <div className="relative z-50">
         <div className="mb-52">
           <Swiper
-            slidesPerView={1} // Change to 1 for mobile
+            slidesPerView={1}
             breakpoints={{
-              // Add breakpoints for different screen sizes
               640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
@@ -104,41 +103,41 @@ const Overview = () => {
 
       <div className="flex flex-col md:flex-row w-11/12 mx-auto mt-[370px] md:gap-14 lg:gap-20 justify-center items-center relative z-20">
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-5">
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center gap-3 max-md:gap-5">
             <div
-              className="rounded-3xl h-[300px] md:h-[400px] w-[250px] md:w-[400px]"
+              className="rounded-3xl h-[230px] md:h-[400px] w-[230px] md:w-[400px]"
               style={{ backgroundColor: largeDivColor }}
             ></div>
             <div className="flex flex-col justify-center items-center gap-5">
               <div
-                className="bg-[#0FA958] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+                className="bg-[#0FA958] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#0FA958")}
               ></div>
               <div
-                className="bg-[#BE92FB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+                className="bg-[#BE92FB] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#BE92FB")}
               ></div>
               <div
-                className="bg-[#FFACAC] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+                className="bg-[#FFACAC] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
                 onClick={() => handleDivClick("#FFACAC")}
               ></div>
             </div>
           </div>
           <div className="flex justify-center items-center gap-3">
             <div
-              className="bg-[#2E4E3E] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+              className="bg-[#2E4E3E] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#2E4E3E")}
             ></div>
             <div
-              className="bg-[#26DBDB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+              className="bg-[#26DBDB] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#26DBDB")}
             ></div>
             <div
-              className="bg-[#B126DB] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+              className="bg-[#B126DB] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#B126DB")}
             ></div>
             <div
-              className="bg-[#DB4126] rounded-3xl h-[70px] w-[70px] md:h-[120px] md:w-[120px]"
+              className="bg-[#DB4126] rounded-3xl h-[55px] w-[55px] md:h-[120px] md:w-[120px]"
               onClick={() => handleDivClick("#DB4126")}
             ></div>
           </div>

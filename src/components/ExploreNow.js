@@ -28,15 +28,15 @@ const ExploreNow = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-1 w-full">
+      <div className="flex-1 w-11/12 mx-auto">
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
           className="mySwiper"
-          style={{ width: "100%", maxWidth: "395px", height: "395px" }}
+          style={{ width: "78%", maxWidth: "395px", height: "395px" }}
         >
-          <SwiperSlide className="rounded-md bg-[#1F3B68]">
+          <SwiperSlide className="rounded-md w-full bg-[#1F3B68]">
             <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
                 <h1 className="text-white font-bold italic text-2xl md:text-4xl">
@@ -64,7 +64,7 @@ const ExploreNow = () => {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="rounded-md bg-[#980FA7]">
+          <SwiperSlide className="rounded-md w-full bg-[#980FA7]">
             <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
                 <h1 className="text-white font-bold italic text-2xl md:text-4xl">
@@ -92,7 +92,7 @@ const ExploreNow = () => {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="rounded-md bg-[#31096A]">
+          <SwiperSlide className="rounded-md w-full bg-[#31096A]">
             <div className="px-5 md:px-10 py-5 flex flex-col justify-between h-full">
               <div className="flex-grow">
                 <h1 className="text-white font-bold italic text-2xl md:text-4xl">
